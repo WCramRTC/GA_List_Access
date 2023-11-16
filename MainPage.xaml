@@ -4,36 +4,69 @@
              x:Class="GA_List_Access.MainPage">
 
     <ScrollView>
+        <!-- Vertical layout to stack elements vertically -->
         <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+            Spacing="15"
+            Padding="15">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            <!-- Label to display the count of elements in the list -->
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                x:Name="labelCount"
+                Text="Count: 0" />
 
+            <!-- Editor to display information, set as read-only -->
+            <Editor
+                x:Name="editorInfo"
+                IsReadOnly="True"
+                HeightRequest="100" />
+
+            <!-- Label indicating where to enter a name -->
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+                Text="Enter a name" />
 
+            <!-- Entry field for user to input a name -->
+            <Entry
+                x:Name="entryName"
+                Placeholder="Name" />
+
+            <!-- Label indicating where to enter an index -->
+            <Label
+                Text="Enter Index" />
+
+            <!-- Entry field for user to input an index, numeric keyboard for ease of input -->
+            <Entry
+                x:Name="entryIndex"
+                Placeholder="Index"
+                Keyboard="Numeric" />
+
+            <!-- Buttons for various actions, each with an event handler -->
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                x:Name="buttonAdd"
+                Text="Add Information"
+                Clicked="buttonAdd_Clicked"
+                 />
+            <Button
+                x:Name="buttonUpdate"
+                Text="Update Information"
+                Clicked="buttonUpdate_Clicked"
+                 />
+            <Button
+                x:Name="buttonInsert"
+                Text="Insert at Index"
+                Clicked="buttonInsert_Clicked"
+                 />
+            <Button
+                x:Name="buttonRemove"
+                Text="Remove at Index"
+                Clicked="buttonRemove_Clicked"
+                 />
+            <Button
+                x:Name="buttonClear"
+                Text="Clear List"
+                Clicked="buttonClear_Clicked"
+                 />
+            
+            
 
         </VerticalStackLayout>
     </ScrollView>
